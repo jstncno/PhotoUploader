@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PhotoUploader-Bridging-Header.h">
+   </FileRef>
+   <FileRef
       location = "group:PhotoUploader.xcodeproj">
    </FileRef>
    <FileRef
