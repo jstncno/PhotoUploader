@@ -16,6 +16,7 @@
 		9CF6C25D1AE7617E002E50C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6C25B1AE7617E002E50C0 /* LaunchScreen.xib */; };
 		9CF6C2691AE7617E002E50C0 /* PhotoUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C2681AE7617E002E50C0 /* PhotoUploaderTests.swift */; };
 		9CF6C2731AE7665D002E50C0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C2721AE7665D002E50C0 /* Constants.swift */; };
+		9CF71A861AEF32700000B370 /* chelsea-grad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9CF71A851AEF32700000B370 /* chelsea-grad.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		9CF6C2671AE7617E002E50C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CF6C2681AE7617E002E50C0 /* PhotoUploaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploaderTests.swift; sourceTree = "<group>"; };
 		9CF6C2721AE7665D002E50C0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "../../../../Downloads/aws-sdk-ios-samples-master/S3TransferManager-Sample/Swift/S3TransferManagerSampleSwift/Constants.swift"; sourceTree = "<group>"; };
+		9CF71A851AEF32700000B370 /* chelsea-grad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "chelsea-grad.jpg"; path = "../../../../Pictures/Me and Chelsea/chelsea-grad.jpg"; sourceTree = "<group>"; };
 		F1F8ADC2C8D8C1388D4C2455 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FD0FB5A23E8154592F26F316 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 		9CF6C24C1AE7617E002E50C0 /* PhotoUploader */ = {
 			isa = PBXGroup;
 			children = (
+				9CF71A851AEF32700000B370 /* chelsea-grad.jpg */,
 				9CC15BC31AE8BDAD00265539 /* PhotoUploaderViewController.swift */,
 				9CF6C24F1AE7617E002E50C0 /* AppDelegate.swift */,
 				9CF6C2721AE7665D002E50C0 /* Constants.swift */,
@@ -227,6 +230,7 @@
 				9CF6C2581AE7617E002E50C0 /* Main.storyboard in Resources */,
 				9CF6C25D1AE7617E002E50C0 /* LaunchScreen.xib in Resources */,
 				9CF6C25A1AE7617E002E50C0 /* Images.xcassets in Resources */,
+				9CF71A861AEF32700000B370 /* chelsea-grad.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
