@@ -17,23 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtO-ut-Ivc">
-                                <rect key="frame" x="304" y="533" width="280" height="47"/>
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="1m6-Cb-Soe"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Upload Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="choosePhoto:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PPR-u7-tWS"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oXY-G1-hY2">
-                                <rect key="frame" x="16" y="28" width="568" height="497"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-yL-mQ1">
                                 <rect key="frame" x="16" y="533" width="280" height="47"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,40 +24,49 @@
                                     <constraint firstAttribute="height" constant="47" id="DNx-3H-593"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Browse AWS">
+                                <state key="normal" title="AWS Photos">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="choosePhoto:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="m25-uL-jTo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtO-ut-Ivc">
+                                <rect key="frame" x="304" y="533" width="280" height="47"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="1m6-Cb-Soe"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Photo Library">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="choosePhoto:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PPR-u7-tWS"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgq-Zn-CLf">
+                                <rect key="frame" x="16" y="28" width="568" height="497"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="MtO-ut-Ivc" secondAttribute="centerX" id="25U-0q-3Ox"/>
-                            <constraint firstItem="MtO-ut-Ivc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="4Q7-mU-XCW"/>
                             <constraint firstItem="xpa-yL-mQ1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="BNL-ZM-cmC"/>
-                            <constraint firstItem="oXY-G1-hY2" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="IDs-Rc-2si"/>
                             <constraint firstItem="MtO-ut-Ivc" firstAttribute="width" secondItem="xpa-yL-mQ1" secondAttribute="width" id="N0d-su-Buw"/>
                             <constraint firstItem="MtO-ut-Ivc" firstAttribute="leading" secondItem="xpa-yL-mQ1" secondAttribute="trailing" constant="8" symbolic="YES" id="OXx-BE-wd1"/>
-                            <constraint firstItem="MtO-ut-Ivc" firstAttribute="top" secondItem="oXY-G1-hY2" secondAttribute="bottom" constant="8" id="PJA-sJ-5D7"/>
+                            <constraint firstItem="MtO-ut-Ivc" firstAttribute="top" secondItem="sgq-Zn-CLf" secondAttribute="bottom" constant="8" symbolic="YES" id="Qzr-hB-mYs"/>
                             <constraint firstItem="MtO-ut-Ivc" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="RvH-Yu-spd"/>
                             <constraint firstItem="MtO-ut-Ivc" firstAttribute="height" secondItem="xpa-yL-mQ1" secondAttribute="height" id="SOM-4m-mSG"/>
-                            <constraint firstItem="oXY-G1-hY2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="T1V-DU-c4d"/>
+                            <constraint firstItem="sgq-Zn-CLf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="UCK-7p-MSd"/>
+                            <constraint firstItem="sgq-Zn-CLf" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="YdX-aE-n7A"/>
+                            <constraint firstItem="sgq-Zn-CLf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="aIb-ws-fxy"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="MtO-ut-Ivc" secondAttribute="bottom" constant="20" id="cO7-mD-Lxs"/>
-                            <constraint firstAttribute="centerY" secondItem="oXY-G1-hY2" secondAttribute="centerY" constant="23.5" id="eU5-oz-pLv"/>
-                            <constraint firstItem="MtO-ut-Ivc" firstAttribute="top" secondItem="oXY-G1-hY2" secondAttribute="bottom" constant="8" id="k3O-HS-rtx"/>
-                            <constraint firstItem="oXY-G1-hY2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="tD9-fr-xgV"/>
-                            <constraint firstAttribute="centerX" secondItem="oXY-G1-hY2" secondAttribute="centerX" id="tKg-87-A4c"/>
-                            <constraint firstItem="xpa-yL-mQ1" firstAttribute="top" secondItem="oXY-G1-hY2" secondAttribute="bottom" constant="8" id="u9Z-45-GVj"/>
+                            <constraint firstItem="xpa-yL-mQ1" firstAttribute="top" secondItem="sgq-Zn-CLf" secondAttribute="bottom" constant="8" symbolic="YES" id="kNw-kh-pcH"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="25U-0q-3Ox"/>
-                                <exclude reference="4Q7-mU-XCW"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageViewContainer" destination="sgq-Zn-CLf" id="DOY-0L-lVi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

@@ -24,6 +24,19 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         }
     }
     
+    private func updateUI() {
+        makeRoomForImage()
+    }
+    
+    // MARK: - Image
+    
+    var imageView = UIImageView()
+    @IBOutlet weak var imageViewContainer: UIView! {
+        didSet {
+            imageViewContainer.addSubview(imageView)
+        }
+    }
+    
     // MARK: - Delegate Methods
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject] ) {
@@ -56,6 +69,14 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
             uploadRequest.body = uploadFilePath
             println("\(uploadFilePath)")
             
+            if let imgData = NSData(contentsOfURL: uploadFilePath) {
+                if let img = UIImage(data: imgData) {
+                    println("img added")
+                    imageView.image = img
+                    makeRoomForImage()
+                }
+            }
+            
             let transferManager = AWSS3TransferManager.defaultS3TransferManager()
             transferManager.upload(uploadRequest).continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
                 if task.error != nil {
@@ -69,13 +90,34 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         }
 
 //        println("\(imageURL)")
+        
 
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func makeRoomForImage() {
+        var extraHeight:CGFloat = 0
+        if imageView.image?.aspectRatio > 0 {
+            if let width = imageView.superview?.frame.size.width {
+                let height = width / imageView.image!.aspectRatio
+                extraHeight = height - imageView.frame.height
+                imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+            }
+        } else {
+            extraHeight = -imageView.frame.height
+            imageView.frame = CGRectZero
+        }
+        preferredContentSize = CGSize(width: preferredContentSize.width, height: preferredContentSize.height + extraHeight)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-    
+}
+
+extension UIImage {
+    var aspectRatio:CGFloat {
+        return size.height != 0 ? size.width / size.height : 0
+    }
 }
