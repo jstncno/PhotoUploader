@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import AssetsLibrary
 
 class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -46,51 +47,30 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         }
         
         //process image
-//        let imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+        imageView.image = image
+        makeRoomForImage()
+        
+        //save image to app's temp folder
+        let path = NSTemporaryDirectory().stringByAppendingPathComponent("upload-image.tmp")
+        let imageData = UIImagePNGRepresentation(image)
+        imageData.writeToFile(path, atomically: true)
+        
+        let imageURL = NSURL(string: path)
         let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest.bucket = "bucket-for-testing"
-        uploadRequest.key = "chelsea-grad.jpg"
-//        uploadRequest.body = imageURL
-//        
-//        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-//        transferManager.upload(uploadRequest).continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
-//            if task.error != nil {
-//                println("\(task.error)")
-//                println("Error uploading: \(imageURL)")
-//            } else {
-//                println("Upload completed!")
-//            }
-//            return nil
-//        })
-        
-        
-        
-        if let uploadFilePath = NSBundle.mainBundle().URLForResource("chelsea-grad", withExtension: "jpg") {
-            uploadRequest.body = uploadFilePath
-            println("\(uploadFilePath)")
-            
-            if let imgData = NSData(contentsOfURL: uploadFilePath) {
-                if let img = UIImage(data: imgData) {
-                    println("img added")
-                    imageView.image = img
-                    makeRoomForImage()
-                }
-            }
-            
-            let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-            transferManager.upload(uploadRequest).continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
-                if task.error != nil {
-                    println("\(task.error)")
-                    println("Error uploading: \(uploadFilePath)")
-                } else {
-                    println("Upload completed!")
-                }
-                return nil
-            })
-        }
+        uploadRequest.key = "test-file"
+        uploadRequest.body = imageURL
 
-//        println("\(imageURL)")
-        
+        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+        transferManager.upload(uploadRequest).continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
+            if task.error != nil {
+                println("\(task.error)")
+                println("Error uploading: \(imageURL)")
+            } else {
+                println("Upload completed!")
+            }
+            return nil
+        })
 
         dismissViewControllerAnimated(true, completion: nil)
     }
