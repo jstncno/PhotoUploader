@@ -57,7 +57,7 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         
         let imageURL = NSURL(string: path)
         let uploadRequest = AWSS3TransferManagerUploadRequest()
-        uploadRequest.bucket = "bucket-for-testing"
+        uploadRequest.bucket = S3BucketName
         uploadRequest.key = "test-file"
         uploadRequest.body = imageURL
 
