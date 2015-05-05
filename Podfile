@@ -12,3 +12,7 @@ pod 'AWSSimpleDB'
 pod 'AWSSNS'
 pod 'AWSSQS'
 pod 'AWSCognito'
+
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'

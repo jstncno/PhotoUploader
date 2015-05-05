@@ -60,6 +60,19 @@ PODS:
     - Bolts (~> 1.1.0)
     - Mantle (~> 1.4)
   - Bolts (1.1.4)
+  - FBSDKCoreKit (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.1.0)
+    - FBSDKCoreKit/no-arc (= 4.1.0)
+  - FBSDKCoreKit/arc (4.1.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.1.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.1.0):
+    - FBSDKCoreKit
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
@@ -88,6 +101,9 @@ DEPENDENCIES:
   - AWSSimpleDB
   - AWSSNS
   - AWSSQS
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
 
 SPEC CHECKSUMS:
   AWSAutoScaling: 7dce9232ff39ba7261879ebee44e99e20ae19ddf
@@ -104,6 +120,9 @@ SPEC CHECKSUMS:
   AWSSNS: 49d9144ec52c8650ba9207232fdd17c68289fac8
   AWSSQS: bb6b810a5d9826b4b25ed520e344b71a90d6e48f
   Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
+  FBSDKCoreKit: 469ed167195f860dbd2b4c4bbaa33d2e90598db9
+  FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
+  FBSDKShareKit: 8002faf0c564ff3625eadd16e506b0b0fbf3adef
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   GZIP: f0863fda354e8f83316508c0a2c7bbe385e39129
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04CD4CAFB5243A3DF19D5B4F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0FB5A23E8154592F26F316 /* libPods.a */; };
 		9CC15BC41AE8BDAD00265539 /* PhotoUploaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC15BC31AE8BDAD00265539 /* PhotoUploaderViewController.swift */; };
+		9CDEB82B1AF88B1C00F59477 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDEB82A1AF88B1C00F59477 /* LoginViewController.swift */; };
 		9CEF1CAF1AF3071400F1097C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF1CAE1AF3071400F1097C /* Constants.swift */; };
 		9CEF1CB11AF307A000F1097C /* chelsea-grad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9CEF1CB01AF307A000F1097C /* chelsea-grad.jpg */; };
 		9CF6C2501AE7617E002E50C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C24F1AE7617E002E50C0 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		54F73D48CFC66C4F61D54259 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9CC15BC31AE8BDAD00265539 /* PhotoUploaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoUploaderViewController.swift; sourceTree = "<group>"; };
+		9CDEB82A1AF88B1C00F59477 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9CEF1CAE1AF3071400F1097C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9CEF1CB01AF307A000F1097C /* chelsea-grad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "chelsea-grad.jpg"; path = "../../../../../../Pictures/Me and Chelsea/chelsea-grad.jpg"; sourceTree = "<group>"; };
 		9CF6C24A1AE7617E002E50C0 /* PhotoUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 			children = (
 				9CEF1CB01AF307A000F1097C /* chelsea-grad.jpg */,
 				9CEF1CAE1AF3071400F1097C /* Constants.swift */,
+				9CDEB82A1AF88B1C00F59477 /* LoginViewController.swift */,
 				9CC15BC31AE8BDAD00265539 /* PhotoUploaderViewController.swift */,
 				9CF6C24F1AE7617E002E50C0 /* AppDelegate.swift */,
 				9CF6C2561AE7617E002E50C0 /* Main.storyboard */,
@@ -284,6 +287,7 @@
 				9CEF1CAF1AF3071400F1097C /* Constants.swift in Sources */,
 				9CF6C2531AE7617E002E50C0 /* PhotoUploader.xcdatamodeld in Sources */,
 				9CF6C2501AE7617E002E50C0 /* AppDelegate.swift in Sources */,
+				9CDEB82B1AF88B1C00F59477 /* LoginViewController.swift in Sources */,
 				9CC15BC41AE8BDAD00265539 /* PhotoUploaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

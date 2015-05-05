@@ -16,4 +16,7 @@
 #import <AWSSNS/AWSSNS.h>
 #import <AWSCognito/AWSCognito.h>
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 #endif
