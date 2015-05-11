@@ -75,6 +75,12 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: - Helper Methods
+    
     func makeRoomForImage() {
         var extraHeight:CGFloat = 0
         if imageView.image?.aspectRatio > 0 {
@@ -89,11 +95,6 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         }
         preferredContentSize = CGSize(width: preferredContentSize.width, height: preferredContentSize.height + extraHeight)
     }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-
 }
 
 extension UIImage {
