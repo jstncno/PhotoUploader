@@ -55,12 +55,13 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         let imageData = UIImagePNGRepresentation(image)
         imageData.writeToFile(path, atomically: true)
         
-        let imageURL = NSURL(string: path)
+//        let imageURL = NSURL(string: path)
+        let imageURL = NSURL(fileURLWithPath: path)
         let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest.bucket = S3BucketName
         uploadRequest.key = "test-file"
         uploadRequest.body = imageURL
-
+        
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         transferManager.upload(uploadRequest).continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
             if task.error != nil {
