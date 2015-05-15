@@ -40,11 +40,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate
         if let identifier = segue.identifier {
             switch identifier {
             case "Logged In":
-                let credentialsProvider:AWSCognitoCredentialsProvider = AWSCognitoCredentialsProvider(regionType: CognitoRegionType, identityPoolId: CognitoIdentityPoolId)
-                
                 if let token = FBSDKAccessToken.currentAccessToken().tokenString {
+                    let credentialsProvider:AWSCognitoCredentialsProvider = AWSCognitoCredentialsProvider(regionType: CognitoRegionType, identityPoolId: CognitoIdentityPoolId)
                     credentialsProvider.logins = ["graph.facebook.com": token]
-//                    println("Token: \(token)")
+                    println("Identity ID: \(credentialsProvider.identityId)")
                     let defaultServiceConfiguration:AWSServiceConfiguration = AWSServiceConfiguration(region: DefaultServiceRegionType, credentialsProvider: credentialsProvider)
                     
                     AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultServiceConfiguration
