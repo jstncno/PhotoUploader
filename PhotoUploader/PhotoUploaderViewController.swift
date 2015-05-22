@@ -10,7 +10,14 @@ import UIKit
 import MobileCoreServices
 import AssetsLibrary
 
-class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
+        cognitoIdentityId = appDelegate.cognitoIdentityId
+        println("\(cognitoIdentityId!)")
+    }
 
     @IBAction func choosePhoto(sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
@@ -28,6 +35,8 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
     private func updateUI() {
         makeRoomForImage()
     }
+    
+    var cognitoIdentityId: String?
     
     // MARK: - Image
     
@@ -59,7 +68,7 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         let imageURL = NSURL(fileURLWithPath: path)
         let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest.bucket = S3BucketName
-        uploadRequest.key = "test-object"
+        uploadRequest.key = "users/\(cognitoIdentityId!)/test-object"
         uploadRequest.body = imageURL
         
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
