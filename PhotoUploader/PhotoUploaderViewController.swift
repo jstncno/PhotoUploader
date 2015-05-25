@@ -18,6 +18,8 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         cognitoIdentityId = appDelegate.cognitoIdentityId
         println("\(cognitoIdentityId!)")
     }
+    
+    // MARK: - UI Methods
 
     @IBAction func choosePhoto(sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
