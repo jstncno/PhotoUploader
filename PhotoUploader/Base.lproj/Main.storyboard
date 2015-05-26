@@ -46,11 +46,11 @@
                                     <constraint firstAttribute="height" constant="47" id="DNx-3H-593"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="AWS Photos">
+                                <state key="normal" title="Download AWS Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="choosePhoto:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="m25-uL-jTo"/>
+                                    <action selector="viewPhotosFromAWS:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QeA-eA-VM0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtO-ut-Ivc">
@@ -88,6 +88,7 @@
                     </view>
                     <connections>
                         <outlet property="imageViewContainer" destination="sgq-Zn-CLf" id="DOY-0L-lVi"/>
+                        <segue destination="2Y3-aF-7Ge" kind="presentation" id="rT5-Hj-Opp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -101,6 +102,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dff-MF-I8T">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UUS-zS-VjN">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -126,7 +128,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9F-K9-NI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1984" y="75"/>
+            <point key="canvasLocation" x="1968" y="431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="igL-QC-9JR">

@@ -8,7 +8,7 @@
 
 import UIKit
 
-let reuseIdentifier = "Cell"
+let reuseIdentifier = "PhotoCell"
 
 class AWSPhotoCollectionViewController: UICollectionViewController {
 
