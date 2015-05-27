@@ -34,6 +34,7 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         let request: AWSS3TransferManagerDownloadRequest = AWSS3TransferManagerDownloadRequest()
         request.bucket = S3BucketName
         request.key = "users/\(cognitoIdentityId!)/test-object"
+//        request.key = "users/test_user/test-object"
 //        request.key = "test-object"
         request.downloadingFileURL = downloadingFileURL
 //        let listObjectsRequest: AWSS3ListObjectsRequest = AWSS3ListObjectsRequest()
@@ -50,7 +51,7 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
                     let image = UIImage(CIImage: myCIImage)
                     self.imageView.image = image
                     self.updateUI()
-                    println("\(downloadOutput.body)")
+//                    println("\(downloadOutput.body)")
                 }
             }
             return nil
@@ -121,6 +122,7 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest.bucket = S3BucketName
         uploadRequest.key = "users/\(cognitoIdentityId!)/test-object"
+//        uploadRequest.key = "users/test_user/test-object"
         uploadRequest.body = imageURL
         
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
