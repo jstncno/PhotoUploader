@@ -24,22 +24,13 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
     // MARK: - UI Methods
     
     @IBAction func viewPhotosFromAWS(sender: UIButton) {
-//        let collectionView = AWSPhotoCollectionViewController()
-//        collectionView.delegate = self
-//        presentViewController(collectionView, animated: true, completion: nil)
-        
         let downloadingFilePath = NSTemporaryDirectory().stringByAppendingPathComponent("downloaded-object")
         let downloadingFileURL = NSURL.fileURLWithPath(downloadingFilePath)
         
         let request: AWSS3TransferManagerDownloadRequest = AWSS3TransferManagerDownloadRequest()
         request.bucket = S3BucketName
         request.key = "users/\(cognitoIdentityId!)/test-object"
-//        request.key = "users/test_user/test-object"
-//        request.key = "test-object"
         request.downloadingFileURL = downloadingFileURL
-//        let listObjectsRequest: AWSS3ListObjectsRequest = AWSS3ListObjectsRequest()
-//        listObjectsRequest.bucket = S3BucketName
-//        listObjectsRequest.prefix = "users/" + cognitoIdentityId!
         
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         transferManager.download(request).continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { [unowned self] (task) -> AnyObject! in
@@ -51,27 +42,16 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
                     let image = UIImage(CIImage: myCIImage)
                     self.imageView.image = image
                     self.updateUI()
-//                    println("\(downloadOutput.body)")
+                    println("\(downloadOutput.body)")
                 }
             }
             return nil
         })
-//        transferManager.download(request).continueWithBlock { [unowned self] (task) -> AnyObject! in
-//            if task.error != nil {
-//                println("\(task.error)")
-//            } else {
-//                let image = UIImage(contentsOfFile: downloadingFilePath)
-//                self.imageView.image = image
-//                println("\(task.result)")
-//            }
-//            return nil
-//        }
-
         
         let listOjbectsOutput: AWSS3ListObjectsOutput = AWSS3ListObjectsOutput()
         
         var objectSummaries = listOjbectsOutput.contents
-//        println("\(objectSummaries)")
+        println("\(objectSummaries)")
     }
 
     @IBAction func choosePhoto(sender: UIButton) {
@@ -117,12 +97,10 @@ class PhotoUploaderViewController: UIViewController, UIImagePickerControllerDele
         let imageData = UIImagePNGRepresentation(image)
         imageData.writeToFile(path, atomically: true)
         
-//        let imageURL = NSURL(string: path)
         let imageURL = NSURL(fileURLWithPath: path)
         let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest.bucket = S3BucketName
         uploadRequest.key = "users/\(cognitoIdentityId!)/test-object"
-//        uploadRequest.key = "users/test_user/test-object"
         uploadRequest.body = imageURL
         
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
